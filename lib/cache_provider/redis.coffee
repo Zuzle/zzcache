@@ -20,17 +20,17 @@ class RedisCacheProvider extends CacheProvider
         @redis_connection.get key, (error, data) =>
             try
                 data = JSON.parse data
-                cb error, data
+                if _.isFunction cb then cb error, data
             catch error
-                cb error
+                if _.isFunction cb then cb error
 
     set: (key, value, cb) =>
-        @redis_connection.set key, JSON.stringify(value), (error) -> cb error
+        @redis_connection.set key, JSON.stringify(value), (error) -> if _.isFunction cb then cb error
         if @options.cache_expire_time
             @redis_connection.expire key, @options.cache_expire_time
 
     del: (key, cb) =>
-        @redis_connection.del key, (error) -> cb error
+        @redis_connection.del key, (error) -> if _.isFunction cb then cb error
 
     del_pattern: (pattern, cb) =>
         @redis_connection.keys pattern, (error, rows) =>
