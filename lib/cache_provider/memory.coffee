@@ -12,7 +12,7 @@ class MemoryCacheProvider extends CacheProvider
     set: (key, value, cb) =>
         @data[key] = value
         if @options.cache_expire_time
-            setTimeout (-> delete @data[key]), @options.cache_expire_time * 1000
+            setTimeout (=> if key of @data then delete @data[key]), @options.cache_expire_time * 1000
         if _.isFunction cb then cb null
 
     del: (key, cb) =>

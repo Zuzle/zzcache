@@ -53,6 +53,19 @@ describe 'zzcache:', ->
                     done()
 
         #
+        it 'Should be able to expire', (done) ->
+            cache = new CacheManager provider.name, provider.options, 1, (error) ->
+                should.not.exist error
+                cache.set key, value, (error) ->
+                    should.not.exist error
+                    setTimeout (->
+                        cache.get key, (error, data) ->
+                            should.exist error
+                            should.not.exist data
+                            done()
+                    ), 1000
+
+        #
         it 'Should be able to del_pattern', (done) ->
             prefix = 'del_pattern:'
 
