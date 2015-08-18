@@ -1,14 +1,31 @@
 {
   "name": "zzcache",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JS library to handle set/get/del/del_pattern operations for cache ",
   "repository" : {
     "type": "git",
-    "url": "https://github.com/Zuzle/zzcache.git"
+    "url": "http://github.com/Zuzle/zzcache.git"
   },
+  "keywords": [
+    "cache",
+    "redis",
+    "memory",
+    "bundle",
+    "npm",
+    "javascript"
+  ],
   "dependencies": {
     "redis": "^0.12.1",
     "underscore": "^1.8.3",
     "async": "^1.3.0"
-  }
+  },
+  "devDependencies": {
+    "coffee-script": "~1.9.0"
+  },
+  "author": {
+    "name": "Valentyn Kotelnikov",
+    "email": "zuzleadmin@gmail.com",
+    "url": "http://zuzle.name"
+  },
+  "license": "MIT"
 }
