@@ -1,8 +1,8 @@
 {
   "name": "zzcache",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JS library to handle set/get/del/del_pattern operations for cache ",
-  "repository" : {
+  "repository": {
     "type": "git",
     "url": "http://github.com/Zuzle/zzcache.git"
   },
